@@ -1,0 +1,16 @@
+version: '2'
+services:
+  authzpy:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - /c/Users/rkesara/authz/:/app
+
+  graphdb:
+    image: neo4j:3.0.4
+    ports: 
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ../neo4j_db:/data
